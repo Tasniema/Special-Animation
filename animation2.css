@@ -1,0 +1,143 @@
+body{
+  box-sizing: border-box;
+}
+.parent{
+  width: 400px;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.child{
+  width: 60px;
+  height: 100px;
+  display: flex;
+  position: relative;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    align-content: stretch;
+    justify-content: flex-end;
+}
+.text{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.father{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  position: relative;
+  flex-direction: column-reverse;
+}
+.one{
+  width: 50px;
+  height: 10px;
+  margin: 10px;
+  background-color: black;
+  position: absolute;
+  top: 34px;
+}
+.two{
+  width: 10px;
+  height: 50px;
+  margin: 10px;
+  background-color: black;
+  position: absolute;
+}
+.three{
+  width: 50px;
+  height: 10px;
+  margin: 10px;
+  background-color: black;
+  position: absolute;
+}
+.four{
+  width: 10px;
+  height: 50px;
+  margin: 10px;
+  background-color: black;
+  position: absolute;
+}
+.five{
+  width: 50px;
+  height: 10px;
+  margin: 10px;
+  background-color: black;
+  position: absolute;
+}
+.six{
+  width: 10px;
+  height: 110px;
+  margin: 10px;
+  background-color: black;
+
+}
+.seven{
+  width: 50px;
+  height: 10px;
+  margin: 10px;
+  background-color: black;
+  position: absolute;
+}
+.child::after{
+  content: "";
+  width: 9px;
+    height: 8px;
+    background-color: yellow;
+    position: absolute;
+    top: 11px;
+    left: 50px;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+  animation-name:  go;
+}
+.father::after {
+  content: "";
+  width: 9px;
+    height: 8px;
+    background-color: yellow;
+    position: absolute;
+    top: 81px;
+    left: 50px;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+  animation-name:  move;
+}
+@keyframes move {
+  0%{transform: translatex(0px);}
+  15%{transform: translate(-39px ,0px);}
+  45%{transform: translate(-40px,-70px);
+  opacity: 1;}
+  50%{transform: translate(-40px,-70px); opacity: 1;}
+  100%{transform: translate(-40px ,-70px);opacity: 0;}
+}
+@keyframes go {
+  0%{transform: translatex(10px);}
+  10%{transform: translate(-40px,0);}
+  20%{transform: translate(-40px ,35px);}
+  30%{transform: translate(10px,33px);}
+  40%{transform: translate(-40px,33px);}
+  50%{transform: translate(-40px,60px);}
+  60%{transform: translate(-40px,70px);}
+  70%{transform: translate(40px,70px);}
+  80%{transform: translate(-40px,70px);}
+  90%{transform: translate(-40px ,0px);}
+  95%{transform: translatex(-40px,0px) ;}
+  100%{transform: translate(0px);}
+}
